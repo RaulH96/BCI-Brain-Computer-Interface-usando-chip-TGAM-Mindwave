@@ -1,0 +1,28 @@
+
+Análisis Wavelet para Leer:
+Energía en banda delta: 3.07
+Energía en banda theta: 1.34
+Energía en banda alpha: 0.67
+Energía en banda beta: 0.36
+Energía en banda gamma: 0.33
+
+Análisis Wavelet para Ver_video:
+Energía en banda delta: 2.49
+Energía en banda theta: 1.28
+Energía en banda alpha: 0.71
+Energía en banda beta: 0.32
+Energía en banda gamma: 0.34
+
+Análisis Wavelet para Speed_Math:
+Energía en banda delta: 1.97
+Energía en banda theta: 0.34
+Energía en banda alpha: 0.16
+Energía en banda beta: 0.10
+Energía en banda gamma: 0.22
+
+Análisis Wavelet para Carros:
+Energía en banda delta: 3.11
+Energía en banda theta: 1.38
+Energía en banda alpha: 0.72
+Energía en banda beta: 0.33
+Energía en banda gamma: 0.34

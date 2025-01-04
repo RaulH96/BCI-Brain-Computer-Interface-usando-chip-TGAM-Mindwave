@@ -1,0 +1,138 @@
+SISTEMA BCI PORTÁTIL PARA ANÁLISIS DE SEÑALES EEG
+===============================================
+
+Introducción
+-----------
+Este proyecto implementa una Interfaz Cerebro-Computadora (BCI) portátil utilizando el dispositivo NeuroSky MindWave y una Raspberry Pi 5. Las BCI son sistemas que permiten una comunicación directa entre el cerebro y dispositivos externos, abriendo posibilidades en campos como medicina, educación y entretenimiento.
+
+La elección del NeuroSky MindWave como dispositivo EEG se justifica por su portabilidad, facilidad de uso y capacidad para proporcionar datos de EEG de un solo canal, suficientes para análisis básicos de estados mentales. Su naturaleza no invasiva y setup simple lo hacen ideal para investigación y desarrollo de aplicaciones BCI.
+
+La Raspberry Pi 5 fue seleccionada como plataforma de cómputo móvil por:
+- Potencia de procesamiento suficiente para análisis en tiempo real
+- Portabilidad y bajo consumo energético
+- Soporte para interfaces gráficas
+- Capacidad de comunicación serial con el MindWave
+- Costo-beneficio óptimo para desarrollo e implementación
+
+Estructura del Proyecto
+----------------------
+
+Carpetas:
+- DataSet/: 
+  * Almacena archivos de datos capturados (.dat)
+  * Formato: usuario_actividad_timestamp.dat (datos procesados)
+  * Formato: raw_usuario_actividad_timestamp.dat (datos crudos)
+
+- Images/: 
+  * Gráficas de captura final de cada sesión
+  * Formato: usuario_actividad_timestamp.png
+
+- Results/usuario/: 
+  * Resultados de análisis organizados por usuario
+  * Archivos de texto con estadísticas (ResultsXXX_usuario.txt)
+  * Gráficas de análisis (GraficaXXX_usuario.png)
+
+Archivos Principales
+------------------
+
+1. Capturadora.py y CapturadoraGUI.py
+   Visualización en tiempo real de:
+   - Señal EEG raw
+   - Niveles de atención y meditación
+   - Espectro de ondas cerebrales (delta, theta, alpha, beta, gamma)
+   Guardado automático de:
+   - Datos crudos y procesados
+   - Gráfica final de la sesión
+
+2. mindwave.py
+   - Implementación del protocolo ThinkGear
+   - Tasa de muestreo: 512 Hz para datos raw
+   - Procesamiento de señales EEG en tiempo real
+
+3. AnalisisGUI.py y Scripts de Análisis
+   Cada tipo de análisis genera visualizaciones específicas:
+
+   Atención (Prub1Atten.py):
+   - Gráfico de barras de atención media por actividad
+   - Box plots de distribución de atención
+   - Línea temporal de atención durante la sesión
+   - Análisis estadístico y ANOVA
+
+   Correlación (Prub2Corr.py):
+   - Matriz de correlación entre señales
+   - Heat map de correlaciones por actividad
+   - Gráfico de barras de correlaciones con atención
+
+   Análisis Espectral (Prub3Frec.py):
+   - Espectro de potencia por bandas de frecuencia
+   - Visualización de componentes frecuenciales
+   - Comparación entre actividades
+
+   Análisis Wavelet (Prub4Wav.py):
+   - Mapas tiempo-frecuencia
+   - Evolución temporal de bandas de frecuencia
+   - Energía por banda para cada actividad
+
+Instrucciones de Uso Detalladas
+-----------------------------
+
+1. Captura de Datos:
+   a. Conectar el MindWave a la Raspberry Pi vía USB
+   b. Ejecutar CapturadoraGUI.py
+   c. Ingresar ID de usuario
+   d. Seleccionar tipo de actividad
+   e. Especificar duración de la sesión
+   f. Iniciar captura
+   g. Verificar calidad de señal
+   h. Esperar finalización de la captura
+
+2. Análisis de Datos:
+   a. Ejecutar AnalisisGUI.py
+   b. Ingresar ID de usuario
+   c. Seleccionar análisis deseados en el menú Ver
+   d. Presionar "Analizar"
+   e. Revisar resultados en cada pestaña
+   f. Consultar archivos generados en Results/usuario/
+
+3. Análisis Individuales:
+   - Ejecutar scripts Prub1Atten.py a Prub4Wav.py según necesidad
+   - Especificar ID de usuario en el código
+   - Revisar resultados específicos
+
+Requisitos del Sistema
+--------------------
+Hardware:
+- Raspberry Pi 5 (4GB RAM mínimo recomendado)
+- NeuroSky MindWave Mobile 2
+- Monitor para interfaz gráfica
+
+Software:
+- Raspberry Pi OS (64-bit)
+- Python 3.x
+- Bibliotecas:
+  * PyQt5 (interfaz gráfica)
+  * matplotlib (visualización)
+  * numpy (procesamiento numérico)
+  * pandas (análisis de datos)
+  * scipy (procesamiento de señales)
+  * seaborn (visualización estadística)
+  * pyserial (comunicación con MindWave)
+
+Interpretación de Resultados
+--------------------------
+1. Niveles de Atención:
+   - Escala 0-100
+   - <40: Baja atención
+   - 40-60: Atención moderada
+   - >60: Alta atención
+
+2. Ondas Cerebrales:
+   - Delta (0.5-4 Hz): Sueño profundo
+   - Theta (4-8 Hz): Somnolencia
+   - Alpha (8-13 Hz): Relajación
+   - Beta (13-30 Hz): Actividad mental
+   - Gamma (30-100 Hz): Concentración intensa
+
+3. Correlaciones:
+   - -1 a 1: Fuerza y dirección de relación
+   - Significancia: * p<0.05, ** p<0.01

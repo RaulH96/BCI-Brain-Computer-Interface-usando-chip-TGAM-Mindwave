@@ -1,0 +1,57 @@
+
+Matriz de correlación general:
+==================================================
+            Attention  delta  theta  low-alpha  high-alpha  low-beta  high-beta  low-gamma  mid-gamma
+Attention       1.000 -0.300 -0.287     -0.167      -0.080     0.028      0.241      0.142      0.122
+delta          -0.300  1.000  0.516      0.409       0.312     0.205      0.163      0.174      0.144
+theta          -0.287  0.516  1.000      0.506       0.476     0.371      0.310      0.295      0.242
+low-alpha      -0.167  0.409  0.506      1.000       0.475     0.362      0.331      0.280      0.256
+high-alpha     -0.080  0.312  0.476      0.475       1.000     0.689      0.597      0.601      0.588
+low-beta        0.028  0.205  0.371      0.362       0.689     1.000      0.759      0.757      0.764
+high-beta       0.241  0.163  0.310      0.331       0.597     0.759      1.000      0.796      0.765
+low-gamma       0.142  0.174  0.295      0.280       0.601     0.757      0.796      1.000      0.822
+mid-gamma       0.122  0.144  0.242      0.256       0.588     0.764      0.765      0.822      1.000
+
+
+Correlaciones por tarea:
+==================================================
+
+Tarea: Leer
+delta: -0.044 
+theta: -0.159 **
+low-alpha: -0.133 **
+high-alpha: -0.077 
+low-beta: 0.056 
+high-beta: 0.226 **
+low-gamma: 0.015 
+mid-gamma: 0.078 
+
+Tarea: Ver_video
+delta: -0.160 **
+theta: -0.153 **
+low-alpha: -0.035 
+high-alpha: 0.000 
+low-beta: 0.052 
+high-beta: 0.172 **
+low-gamma: 0.097 *
+mid-gamma: 0.080 *
+
+Tarea: Speed_Math
+delta: -0.084 *
+theta: -0.179 **
+low-alpha: -0.060 
+high-alpha: -0.047 
+low-beta: 0.002 
+high-beta: 0.089 *
+low-gamma: 0.084 *
+mid-gamma: 0.054 
+
+Tarea: Carros
+delta: -0.242 **
+theta: -0.260 **
+low-alpha: -0.143 **
+high-alpha: -0.065 
+low-beta: 0.027 
+high-beta: 0.219 **
+low-gamma: 0.022 
+mid-gamma: 0.013 

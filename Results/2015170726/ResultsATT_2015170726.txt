@@ -1,0 +1,44 @@
+Estadísticas para Leer:
+Actividad: Leer
+Media: 70.81
+Mediana: 70.00
+Std: 14.94
+Min: 21.00
+Max: 100.00
+25%: 61.00
+75%: 80.00
+
+Estadísticas para Ver_video:
+Actividad: Ver_video
+Media: 47.59
+Mediana: 49.00
+Std: 17.34
+Min: 1.00
+Max: 91.00
+25%: 38.00
+75%: 60.00
+
+Estadísticas para Speed_Math:
+Actividad: Speed_Math
+Media: 34.72
+Mediana: 35.00
+Std: 13.58
+Min: 1.00
+Max: 84.00
+25%: 26.00
+75%: 43.00
+
+Estadísticas para Carros:
+Actividad: Carros
+Media: 55.01
+Mediana: 54.00
+Std: 15.65
+Min: 11.00
+Max: 100.00
+25%: 44.00
+75%: 66.00
+
+
+Resultados ANOVA:
+F-statistic: 571.6990
+p-value: 0.0000
